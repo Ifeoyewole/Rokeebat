@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import { FaTiktok, FaLinkedin } from 'react-icons/fa';
+import { FiInstagram } from 'react-icons/fi';
+import { AiOutlineWhatsApp } from 'react-icons/ai';
 
 export default function Home() {
   const testimonials = [
@@ -17,7 +20,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section id="home" className="hero-section container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '64px' }}>
+      <section id="home" className="hero-section container" style={{ minHeight: 'auto', display: 'flex', alignItems: 'flex-start', marginTop: '80px', paddingBottom: '100px' }}>
         <div className="hero-content animate-fade-in" style={{ flex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
             <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--accent)' }}></div>
@@ -123,9 +126,9 @@ export default function Home() {
         
         <div className="projects-grid">
           {[
-            { title: 'LearnDash', desc: 'An EdTech app designed to simplify tech learning through bite-sized lessons, practical content and a distraction-free learning experience.', link: 'https://www.figma.com/proto/A0yuTB0KDN9lZdPY02DMQ7/Untitled?node-id=380-496&t=HPy8YEe0dln3EBgX-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=380%3A566' },
-            { title: 'RockWears', desc: 'A modern fashion e-commerce app designed to make clothing discovery and online shopping simple, seamless and visually engaging.' },
-            { title: 'Belleful', desc: 'A modern food delivery app designed to make discovering meals, exploring restaurants and placing orders simple, smooth and enjoyable.' }
+            { title: 'LearnDash', desc: 'An EdTech app designed to simplify tech learning through bite-sized lessons, practical content and a distraction-free learning experience.', link: 'https://www.figma.com/proto/A0yuTB0KDN9lZdPY02DMQ7/Untitled?node-id=540-207&t=REdFzafx4MHQoFUk-1&scaling=min-zoom&content-scaling=fixed&page-id=242%3A2&starting-point-node-id=452%3A300' },
+            { title: 'Rockwears', desc: 'A modern fashion e-commerce app designed to make clothing discovery and online shopping simple, seamless and visually engaging.', link: 'https://www.figma.com/proto/A0yuTB0KDN9lZdPY02DMQ7/Untitled?node-id=262-4864&t=6ZiQLRQz8adGePGV-1&scaling=min-zoom&content-scaling=fixed&page-id=242%3A2&starting-point-node-id=259%3A4835&show-proto-sidebar=1' },
+            { title: 'Belleful', desc: 'A modern food delivery app designed to make discovering meals, exploring restaurants and placing orders simple, smooth and enjoyable.', link: 'https://www.figma.com/proto/A0yuTB0KDN9lZdPY02DMQ7/Untitled?node-id=267-4884&t=0NtJQCtIe7D7YZb7-1&scaling=min-zoom&content-scaling=fixed&page-id=242%3A2&starting-point-node-id=452%3A300&show-proto-sidebar=1' }
           ].map((project, i) => (
             <div key={i} className="card">
               <div style={{ height: '200px', backgroundColor: '#1a1a1a', borderRadius: '8px', marginBottom: '24px' }}></div>
@@ -140,24 +143,32 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="container">
+      <section className="container" style={{ marginTop: '120px' }}>
         <span className="section-tag">— HOW I WORK</span>
-        <h2 style={{ fontSize: '3rem', marginBottom: '48px' }}>My Process</h2>
+        <h2 style={{ fontSize: '3rem', marginBottom: '0' }}>My Process</h2>
         
-        <div className="process-grid">
+        <div className="custom-process-grid">
           {[
-            { num: '01', title: 'Research', desc: 'Research users, stakeholders, and the market to uncover the real problem.' },
-            { num: '02', title: 'Define', desc: 'Synthesise findings into a clear problem statement and measurable design goals.' },
-            { num: '03', title: 'Ideate', desc: 'I explore different solutions through brainstorming, user flows, sketches and information architecture.' },
-            { num: '04', title: 'Wireframe', desc: 'I create low-fidelity wireframes to establish the structure, layout and functionality before focusing on visual details.' },
-            { num: '05', title: 'Design', desc: 'I turn ideas into clean, engaging and user-friendly interfaces that balance aesthetics with functionality.' },
-            { num: '06', title: 'Prototype', desc: 'Create interactive prototypes that simulate the final experience for testing.' },
-            { num: '07', title: 'Test & Refine', desc: 'I review the design, gather feedback and identify areas that can be improved.' }
+            { num: '01', title: 'Research', desc: 'Research users, stakeholders and the market to uncover the real problem.', pos: [1, 1], connects: ['down'] },
+            { num: '02', title: 'Define', desc: 'Synthesise findings into a clear problem statement and measurable design goals.', pos: [2, 1], connects: ['down'] },
+            { num: '03', title: 'Ideate', desc: 'I explore different solutions through brainstorming, user flows, sketches and information architecture.', pos: [3, 1], connects: ['right'] },
+            { num: '04', title: 'Wireframe', desc: 'I create low-fidelity wireframe to establish the structure, layout and functionality before focusing on visual details.', pos: [3, 2], connects: ['right'] },
+            { num: '05', title: 'Design', desc: 'I turn ideas into clean, engaging and user-friendly interfaces that balance aesthetics with functionality.', pos: [3, 3], connects: ['up'] },
+            { num: '06', title: 'Prototype', desc: 'Create interactive prototypes that simulate the final experience for testing.', pos: [2, 3], connects: ['up'] },
+            { num: '07', title: 'Test & Refine', desc: 'I review the design, gather feedback and identify areas that can be improved', pos: [1, 3], connects: [] }
           ].map((step, i) => (
-            <div key={i} className="card">
-              <span style={{ color: 'var(--accent)', fontSize: '1.25rem', fontWeight: '600', marginBottom: '16px', display: 'block' }}>{step.num}</span>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>{step.title}</h3>
-              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{step.desc}</p>
+            <div key={i} style={{ '--col': step.pos[1], '--row': step.pos[0] } as React.CSSProperties} className="process-step">
+              <div style={{ width: '48px', height: '48px', border: '1px solid var(--accent)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.125rem', fontWeight: '500', fontFamily: 'var(--font-playfair)', flexShrink: 0 }}>
+                {step.num}
+              </div>
+              <div style={{ backgroundColor: 'white', color: 'black', padding: '24px', borderRadius: '8px', flex: 1, position: 'relative', minHeight: '140px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <h3 style={{ textAlign: 'center', marginBottom: '12px', fontSize: '1.125rem', fontWeight: '700' }}>{step.title}</h3>
+                <p style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>{step.desc}</p>
+                
+                {step.connects.includes('down') && <div className="process-line-down" />}
+                {step.connects.includes('up') && <div className="process-line-up" />}
+                {step.connects.includes('right') && <div className="process-line-right" />}
+              </div>
             </div>
           ))}
         </div>
@@ -192,22 +203,22 @@ export default function Home() {
             {/* Left Column: Logo & Socials */}
             <div>
               <h2 style={{ fontFamily: 'var(--font-playfair)', fontSize: '2rem', color: 'var(--accent)', marginBottom: '16px' }}>ARA</h2>
-              <div style={{ display: 'flex', gap: '16px', color: 'white' }}>
+              <div style={{ display: 'flex', gap: '20px', color: 'white', fontSize: '24px' }}>
                 {/* TikTok Icon */}
-                <a href="#" aria-label="TikTok" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                <a href="https://www.tiktok.com/@rocky_bossss?_r=1&_t=ZS-9A2LlRPHFSe" aria-label="TikTok" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer', color: 'inherit' }} target="_blank" rel="noopener noreferrer">
+                  <FaTiktok />
                 </a>
                 {/* Instagram Icon */}
-                <a href="https://www.instagram.com/rocky_adenike?stkn=MWJ5NTFibnh5cnJnag==" aria-label="Instagram" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer' }} target="_blank" rel="noopener noreferrer">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href="https://www.instagram.com/rocky_adenike?stkn=MWJ5NTFibnh5cnJnag==" aria-label="Instagram" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer', color: 'inherit' }} target="_blank" rel="noopener noreferrer">
+                  <FiInstagram />
                 </a>
                 {/* LinkedIn Icon */}
-                <a href="https://www.linkedin.com/in/rokeebat-adepoju-110a522a4?utm_source=share_via&utm_content=profile&utm_medium=member_android" aria-label="LinkedIn" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer' }} target="_blank" rel="noopener noreferrer">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://www.linkedin.com/in/rokeebat-adepoju-110a522a4?utm_source=share_via&utm_content=profile&utm_medium=member_android" aria-label="LinkedIn" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer', color: 'inherit' }} target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
                 </a>
                 {/* WhatsApp Icon */}
-                <a href="#" aria-label="WhatsApp" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="https://wa.me/9151794615" aria-label="WhatsApp" style={{ display: 'flex', alignItems: 'center', transition: 'color 0.3s', cursor: 'pointer', color: 'inherit' }} target="_blank" rel="noopener noreferrer">
+                  <AiOutlineWhatsApp />
                 </a>
               </div>
             </div>
