@@ -27,7 +27,7 @@ export default function Home() {
             <span style={{ color: 'var(--accent)', fontSize: '1.125rem', fontWeight: '600', letterSpacing: '1px' }}>UI/UX DESIGNER</span>
           </div>
           
-          <h1 style={{ fontSize: '6rem', marginBottom: '32px', lineHeight: '1', fontFamily: 'var(--font-playfair)' }}>
+          <h1 className="hero-title" style={{ fontSize: '6rem', marginBottom: '32px', lineHeight: '1', fontFamily: 'var(--font-playfair)' }}>
             <span style={{ display: 'block', color: 'white' }}>Adepoju</span>
             <span style={{ display: 'block', color: 'var(--accent)' }}>Rokeebat</span>
           </h1>
@@ -48,10 +48,10 @@ export default function Home() {
         
         <div className="hero-visual animate-fade-in-delayed" style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', position: 'relative' }}>
           {/* Gold Outline Box behind */}
-          <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '480px', border: '1px solid var(--accent)', zIndex: 0 }}></div>
+          <div className="hero-image-outline" style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '480px', border: '1px solid var(--accent)', zIndex: 0 }}></div>
           
           {/* Main Image Box */}
-          <div style={{ position: 'relative', width: '400px', height: '480px', overflow: 'hidden', zIndex: 1, marginRight: '40px', marginTop: '40px' }}>
+          <div className="hero-image-box" style={{ position: 'relative', width: '400px', height: '480px', overflow: 'hidden', zIndex: 1, marginRight: '40px', marginTop: '40px' }}>
             <Image 
               src="/photo_2026-09-27_17-24-34.jpg" 
               alt="Adepoju Rokeebat" 
@@ -86,7 +86,7 @@ export default function Home() {
             "I believe every pixel has a purpose and behind every great interface is a deeply human question."
           </h2>
           
-          <div style={{ display: 'flex', gap: '64px', flexWrap: 'wrap' }}>
+          <div className="about-content" style={{ display: 'flex', gap: '64px', flexWrap: 'wrap' }}>
             <div style={{ flex: '1', minWidth: '300px' }}>
               <p style={{ marginBottom: '24px', fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--foreground-dark)' }}>
                 I'm Adepoju Rokeebat, a Computer Science student who discovered early that the most powerful thing about technology isn't what it does, but how it makes people feel. That realisation led me straight into design.
