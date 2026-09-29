@@ -275,3 +275,19 @@ footer {
   .footer-bottom-links { flex-direction: column !important; gap: 16px !important; }
 }
 
+
+html { scroll-behavior: smooth; }
+
+.mobile-menu-icon { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+.mobile-menu-icon .bar { width: 24px; height: 2px; background-color: white; transition: 0.3s; }
+.mobile-only-btn { display: none !important; }
+
+@media (max-width: 768px) {
+  .desktop-talk-btn { display: none !important; }
+  .mobile-menu-icon { display: flex !important; }
+  .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); display: flex !important; flex-direction: column; justify-content: center; align-items: center; gap: 32px; opacity: 0; pointer-events: none; transition: 0.4s ease; z-index: 90; transform: translateY(-20px); }
+  .nav-links.open { opacity: 1 !important; pointer-events: auto !important; transform: translateY(0) !important; }
+  .nav-links a { font-size: 1.5rem; font-family: var(--font-playfair); color: white; }
+  .mobile-only-btn { display: block !important; }
+}
+
