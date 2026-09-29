@@ -262,12 +262,16 @@ footer {
 
 @media (max-width: 768px) {
   .nav-links { display: none !important; }
-  .hero-section { flex-direction: column; gap: 48px; margin-top: 40px !important; align-items: center !important; }
-  .hero-title { font-size: 3.5rem !important; }
-  .hero-image-box { width: 100% !important; max-width: 350px; height: 400px !important; margin: 0 auto !important; }
-  .hero-visual { width: 100%; justify-content: center !important; }
-  .hero-image-outline { width: 100% !important; max-width: 350px; height: 400px !important; }
+  .hero-section { flex-direction: column; gap: 48px; margin-top: 40px !important; align-items: flex-start !important; }
+  .hero-title { font-size: 3.5rem !important; margin-bottom: 16px !important; }
+  .hero-buttons { flex-direction: column !important; width: 100% !important; gap: 16px !important; }
+  .hero-buttons a { width: 100% !important; text-align: center !important; }
+  .hero-image-box { width: 100% !important; max-width: none !important; height: 350px !important; margin: 0 !important; }
+  .hero-visual { width: 100%; justify-content: flex-start !important; }
+  .hero-image-outline { display: none !important; }
   .about-content { flex-direction: column; gap: 32px; }
-  .footer-content { flex-direction: column; align-items: flex-start; }
+  .footer-content { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .footer-right-col { justify-content: flex-start !important; flex-direction: column; gap: 24px !important; }
+  .footer-bottom-links { flex-direction: column !important; gap: 16px !important; }
 }
 

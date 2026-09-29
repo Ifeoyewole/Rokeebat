@@ -36,7 +36,7 @@ export default function Home() {
             I design digital experiences that feel as good as they look: purposeful, precise, and deeply human.
           </p>
           
-          <div style={{ display: 'flex', gap: '24px' }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '24px' }}>
             <a href="#work" style={{ backgroundColor: 'white', color: 'black', padding: '16px 32px', fontWeight: '600', fontSize: '1rem', transition: 'opacity 0.3s' }}>
               View my work
             </a>
@@ -224,7 +224,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Contact Info & Form */}
-            <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', flex: '1', justifyContent: 'flex-end' }}>
+            <div className="footer-right-col" style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', flex: '1', justifyContent: 'flex-end' }}>
               <div style={{ fontSize: '1.125rem', lineHeight: '1.5', maxWidth: '200px' }}>
                 Have an idea?<br/>Let's bring it to life.
               </div>
@@ -254,7 +254,7 @@ export default function Home() {
 
           {/* Bottom Area */}
           <div>
-            <div style={{ display: 'flex', gap: '24px', color: '#ccc', marginBottom: '16px', flexWrap: 'wrap' }}>
+            <div className="footer-bottom-links" style={{ display: 'flex', gap: '24px', color: '#ccc', marginBottom: '16px', flexWrap: 'wrap' }}>
               <a href="#home">Home</a>
               <a href="#about">About</a>
               <a href="#work">Work</a>
